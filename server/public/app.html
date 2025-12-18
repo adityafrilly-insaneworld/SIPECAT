@@ -1,0 +1,37 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Register Surat</title><meta name="theme-color" content="#111827">
+<link rel="manifest" href="/manifest.json"><link rel="icon" href="/icons/icon-192.png">
+<link rel="stylesheet" href="/styles.css"></head><body>
+<header class="topbar"><div class="brand"><div class="logo">SR</div><div>
+<div class="title">Register Surat</div><div class="subtitle" id="sub">—</div>
+</div></div><div class="actions">
+<a class="btn secondary" href="/users.html" id="usersLink" style="display:none;text-decoration:none;">User</a>
+<button id="btnLogout" class="btn danger">Logout</button></div></header>
+<main class="container">
+<section class="card"><div class="cardHead"><h2>Tambah Surat</h2><div class="pill" id="previewNo">—</div></div>
+<form id="letterForm" class="grid">
+<div class="field"><label>Klasifikasi</label>
+<select id="classification" required><option value="OUTGOING">Surat Keluar</option><option value="CERTIFICATE">Surat Keterangan</option></select>
+<div class="hint">Nomor urut terpisah per klasifikasi per tahun.</div></div>
+<div class="field"><label>Tanggal Surat</label><input id="letterDate" type="date" required/></div>
+<div class="field span2"><label>Perihal</label><input id="subject" maxlength="120" required placeholder="Contoh: Undangan rapat / Keterangan domisili"></div>
+<div class="field span2"><label>Nama/Tujuan (opsional)</label><input id="party" maxlength="120" placeholder="Contoh: Kecamatan / Nama Warga"></div>
+<div class="field span2 row"><button class="btn primary" type="submit">Simpan & Buat Nomor</button><div class="muted" id="msg">—</div></div>
+</form></section>
+
+<section class="card"><div class="cardHead"><h2>Daftar Surat</h2>
+<div class="filters">
+<select id="filterClass"><option value="ALL">Semua</option><option value="OUTGOING">Surat Keluar</option><option value="CERTIFICATE">Surat Keterangan</option></select>
+<input id="filterYear" type="number" min="2000" max="2100" placeholder="Tahun">
+<input id="search" type="search" placeholder="Cari nomor/perihal/nama…"/>
+<button id="btnRefresh" class="btn secondary" type="button">Refresh</button>
+</div></div>
+<div class="tableWrap"><table><thead><tr>
+<th>Register</th><th>Tanggal</th><th>Klasifikasi</th><th>Perihal</th><th>Nama/Tujuan</th><th>Status</th><th>Aksi</th>
+</tr></thead><tbody id="tbody"></tbody></table></div>
+<div class="footerRow"><div id="stats" class="muted">—</div><div class="muted">Tip: “Batal” tidak mengubah urutan nomor.</div></div>
+</section></main>
+<script src="/common.js"></script><script src="/app.js"></script>
+<script>if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/service-worker.js'));}</script>
+</body></html>

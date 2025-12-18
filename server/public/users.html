@@ -1,0 +1,32 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Manajemen User</title><meta name="theme-color" content="#111827">
+<link rel="manifest" href="/manifest.json"><link rel="icon" href="/icons/icon-192.png">
+<link rel="stylesheet" href="/styles.css"></head><body>
+<header class="topbar"><div class="brand"><div class="logo">SR</div><div>
+<div class="title">Manajemen User</div><div class="subtitle">Khusus Admin</div>
+</div></div><div class="actions">
+<a class="btn secondary" href="/app" style="text-decoration:none;">← Kembali</a>
+<button id="btnLogout" class="btn danger">Logout</button></div></header>
+
+<main class="container">
+<section class="card"><div class="cardHead"><h2>Buat User Baru</h2><div class="muted" id="msg">—</div></div>
+<form id="userForm" class="grid">
+<div class="field"><label>Nama</label><input id="name" required></div>
+<div class="field"><label>Username</label><input id="username" required></div>
+<div class="field"><label>Password</label><input id="password" type="password" required></div>
+<div class="field"><label>Role</label><select id="role" required>
+<option value="OPERATOR">OPERATOR</option><option value="PIMPINAN">PIMPINAN</option><option value="ADMIN">ADMIN</option>
+</select></div>
+<div class="field span2 row"><button class="btn primary" type="submit">Simpan</button><button class="btn secondary" type="button" id="btnReload">Reload</button></div>
+</form></section>
+
+<section class="card"><div class="cardHead"><h2>Daftar User</h2><div class="muted">Nonaktifkan user tanpa menghapus.</div></div>
+<div class="tableWrap"><table><thead><tr>
+<th>ID</th><th>Nama</th><th>Username</th><th>Role</th><th>Aktif</th><th>Aksi</th>
+</tr></thead><tbody id="tbody"></tbody></table></div>
+</section></main>
+
+<script src="/common.js"></script><script src="/users.js"></script>
+<script>if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/service-worker.js'));}</script>
+</body></html>

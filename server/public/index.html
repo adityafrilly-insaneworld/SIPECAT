@@ -1,0 +1,19 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sistem Pencatat Surat Desa</title><meta name="theme-color" content="#111827">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css"></head><body>
+<header class="topbar"><div class="brand"><div class="logo">SR</div><div>
+<div class="title">Sistem Pencatat Surat</div><div class="subtitle">Login • Multi level user • Register otomatis</div>
+</div></div><div class="actions"><span class="pill">v1</span></div></header>
+<main class="container">
+<section class="card"><div class="cardHead"><h2>Login</h2><div class="muted">Gunakan akun admin awal dari <span class="mono">server/.env</span>.</div></div>
+<form id="loginForm" class="grid">
+<div class="field"><label>Username</label><input id="username" autocomplete="username" required></div>
+<div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" required></div>
+<div class="field span2 row"><button class="btn primary" type="submit">Masuk</button><div class="muted" id="msg">—</div></div>
+</form></section>
+</main>
+<script src="common.js"></script><script src="login.js"></script>
+<script>if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));}</script>
+</body></html>
